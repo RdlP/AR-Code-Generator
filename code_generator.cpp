@@ -31,7 +31,7 @@ int main(int argc, char **argv){
 	for (int k = 1; k < argc - 1; k++){
 		unsigned char* hamming_code = new unsigned char[5];
 		int number = atoi(argv[k]);
-		cv::Mat img(7*cell_size, 7*cell_size, CV_8UC1);
+		cv::Mat img = cv::Mat::zeros(7*cell_size, 7*cell_size, CV_8UC1);
 		for (int i = 0; i < 10; i+=2){
 			int val = ((number << i)&0x200)>>9;
 			hamming_code[2] = val;
